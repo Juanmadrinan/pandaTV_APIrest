@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 })
 
 app.use(cors(
-  origin = 'http://localhost:4321',
+  origin = 'https://main--classy-pothos-d58372.netlify.app',
 ));
 app.use('/api/tipo', tipoRoutes);
 app.use('/api/productora', productoraRoutes);
