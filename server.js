@@ -1,6 +1,7 @@
 const express = require('express');
 require('./db/db-connection-mongo');
 require('dotenv').config();
+const cors = require('cors');
 const tipoRoutes = require('./routes/tipoRoutes');
 const mediaRoutes = require('./routes/mediaRoutes');
 const productoraRoutes = require('./routes/productoraRoutes');
@@ -20,6 +21,9 @@ app.get('/', (req, res) => {
   res.send('Hola mundo!!!!!');
 })
 
+app.use(cors(
+  origin = 'http://localhost:4321',
+));
 app.use('/api/tipo', tipoRoutes);
 app.use('/api/productora', productoraRoutes);
 app.use('/api/genre', genreRoutes);
